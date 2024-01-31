@@ -9,7 +9,7 @@
 void execute_monty_file(FILE *file)
 {
 	char *line, *opcode;
-	size_t size = 0;
+	size_t size = 0, length;
 	ssize_t line_read = 1;
 	stack_t *stack = NULL;
 	unsigned int counter = 0;
@@ -24,8 +24,14 @@ void execute_monty_file(FILE *file)
 		if (line_read > 0)
 		{
 			opcode = strtok(line, " \t\n");
+
 			if (opcode != NULL)
+			{
+				length = strlen(opcode);
+				if (length > 0 && opcode[length - 1] == '$')
+				opcode[length - 1] = '\0';
 				execute_opcode(opcode, &stack, counter);
+			}
 		}
 		free(line);
 	}
@@ -53,7 +59,7 @@ void execute_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 		if (strcmp(opcode, instructions[i].opcode) == 0)
 		{
 			instructions[i].f(stack, line_number);
-			free(bus.arg);
+			/*free(bus.arg);*/
 			return; /* found and executed the opcode */
 		}
 	}
