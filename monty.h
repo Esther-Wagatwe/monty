@@ -66,8 +66,8 @@ void add_queue(stack_t **head, int n);
 void queue_function(stack_t **head, unsigned int counter);
 void pall_function(stack_t **stack, unsigned int line_number);
 void pint_function(stack_t **stack, unsigned int line_number);
-/*void pop_function(stack_t **stack, unsigned int line_number);
-void swap_function(stack_t **stack, unsigned int line_number);
+void pop_function(stack_t **stack, unsigned int line_number);
+/*void swap_function(stack_t **stack, unsigned int line_number);
 void add_function(stack_t **stack, unsigned int line_number);
 void nop_function(stack_t **stack, unsigned int line_number);*/
 void execute_opcode(char *opcode, stack_t **stack, unsigned int line_number);
