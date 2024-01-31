@@ -4,6 +4,7 @@ bus_t bus = {NULL, NULL, NULL, 0};
 
 instruction_t instructions[] = {
 	{"push", push_function},
+	{"queue", queue_function},
 	/*{"pall", pall_function},
 	{"pint", pint_function},
 	{"pop", pop_function},
