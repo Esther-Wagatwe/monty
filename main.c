@@ -1,5 +1,19 @@
 #include "monty.h"
 
+bus_t bus = {NULL, NULL, NULL, 0};
+
+instruction_t instructions[] = {
+	{"push", push_function},
+	/*{"pall", pall_function},
+	{"pint", pint_function},
+	{"pop", pop_function},
+	{"swap", swap_function},
+	{"add", add_function},
+	{"nop", nop_function},*/
+	/* Add more instructions as needed */
+	{NULL, NULL}
+};
+
 /**
   * main - monty bytecode operator
   * @argc: Argument count
@@ -10,10 +24,6 @@
 int main(int argc, char *argv[])
 {
 	FILE *file;
-	char line[MAX_LEN];
-	char *opcode, *argument;
-	size_t length;
-	stack_t *stack = NULL;
 
 	if (argc != 2)
 	{
@@ -22,26 +32,14 @@ int main(int argc, char *argv[])
 	}
 
 	file = fopen(argv[1], "r");
+	bus.file = file;
 	if (file == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n" argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 
-	while (fgets(line, sizeof(line), file) != NULL)
-	{
-		length = strlen(line);
-		if (length > 0 && line[length - 1] == '\n')
-			line[length - 1] = '\0';
-
-		opcode = strtok(line, " \t\n");
-		argument = strtok(NULL, " \t\n");
-
-		if (opcode != NULL)
-		{
-			printf("Opcode: %s, Argument: %s\n", opcode, argument ? argument : "None");
-		}
-	}
+	execute_monty_file(file);
 
 	fclose(file);
 
