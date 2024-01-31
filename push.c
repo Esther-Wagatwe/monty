@@ -1,30 +1,47 @@
 #include "monty.h"
-#include <stdlib.h>
 
 /**
- * add_node - adds a node to the head stack
- * @head: head of the stack
- * @n: new_value
- * Return: no return
- */
-
-void add_node(stack_t **head, int n)
+  * push_function - function that adds an element to a stack
+  * @head: pointer to the head
+  * @line_number: number of the line
+  * Return: void
+  */
+void push_function(stack_t **head, unsigned int line_number)
 {
-	stack_t *new, *h;
+	int num, i = 0, flag = 0;
 
-	new = malloc(sizeof (stack_t));
-
-	if (new == NULL)
+	printf("Before argument check: bus.arg: %s\n", bus.arg);
+	if (bus.arg)
 	{
-		printf("Error\n");
+		if (bus.arg[0] == '-')
+			i++;
+		for (; bus.arg[i] != '\0'; i++)
+		{
+			if (bus.arg[i] > 57 || bus.arg[i] < 48)
+				flag = 1;
+		}
+		printf("After argument check: bus.arg: %s\n", bus.arg);
+		if (flag == 1)
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			fclose(bus.file);
+			free(bus.line);
+			free_stack(*head);
+			exit(EXIT_FAILURE);
+		}
+	}
+	else
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		fclose(bus.file);
+		free(bus.line);
+		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	if (h)
-		h->prev = new
-
-	new->n = n;
-	new->next = *head;
-	new->prev = NULL;
-
-	*head = new;
+	num = atoi(bus.arg);
+	printf("After conversion: num: %d\n", num);
+	if (bus.sq_flag == 0)
+		add_node(head, num);
+	else
+		add_queue(head, num);
 }
