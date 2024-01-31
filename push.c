@@ -1,6 +1,30 @@
 #include "monty.h"
+#include <stdlib.h>
 
-void push_function(stack_t **stack, unsigned int line_number)
+/**
+ * add_node - adds a node to the head stack
+ * @head: head of the stack
+ * @n: new_value
+ * Return: no return
+ */
+
+void add_node(stack_t **head, int n)
 {
-	
+	stack_t *new, *h;
+
+	new = malloc(sizeof (stack_t));
+
+	if (new == NULL)
+	{
+		printf("Error\n");
+		exit(EXIT_FAILURE);
+	}
+	if (h)
+		h->prev = new
+
+	new->n = n;
+	new->next = *head;
+	new->prev = NULL;
+
+	*head = new;
 }
