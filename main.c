@@ -8,9 +8,9 @@ instruction_t instructions[] = {
 	{"pall", pall_function},
 	{"pint", pint_function},
 	{"swap", swap_function},
+	{"pop", pop_function},
 	/* Add more instructions as needed */
 	{NULL, NULL}
-};
 
 /**
   * main - monty bytecode operator
