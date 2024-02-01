@@ -13,9 +13,6 @@ void push_function(stack_t **head, unsigned int line_number)
 	if (!bus.arg || (bus.arg[0] != '-' && !isdigit(bus.arg[0])))
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		fclose(bus.file);
-		free(bus.line);
-		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	num = atoi(bus.arg);
