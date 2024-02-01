@@ -72,6 +72,8 @@ void add_function(stack_t **stack, unsigned int line_number);
 void nop_function(stack_t **stack, unsigned int line_number);
 void div_function(stack_t **stack, unsigned int line_number);
 void sub_function(stack_t **stack, unsigned int line_number);
+void mul_function(stack_t **stack, unsigned int line_number);
+void mod_function(stack_t **stack, unsigned int line_number);
 void execute_opcode(char *opcode, stack_t **stack, unsigned int line_number);
 void add_node(stack_t **head, int n);
 void execute_monty_file(FILE *file);
