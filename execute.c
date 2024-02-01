@@ -66,10 +66,6 @@ void execute_opcode(char *opcode, stack_t **stack, unsigned int line_number)
 	if (opcode && instructions[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-		/*fclose(bus.file);
-		free(bus.arg);
-		free_stack(*stack);*/
 		exit(EXIT_FAILURE);
 	}
-	free(bus.arg);
 }
