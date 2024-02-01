@@ -16,6 +16,7 @@ instruction_t instructions[] = {
 	{"mul", mul_function},
 	{"mod", mod_function},
 	{"stack", stack_function},
+	{"pchar", pchar_function},
 	/* Add more instructions as needed */
 	{NULL, NULL}
 };
