@@ -18,6 +18,8 @@ instruction_t instructions[] = {
 	{"stack", stack_function},
 	{"pchar", pchar_function},
 	{"pstr", pstr_function},
+	{"rotl", rotl_function},
+	{"rotr", rotr_function},
 	/* Add more instructions as needed */
 	{NULL, NULL}
 };

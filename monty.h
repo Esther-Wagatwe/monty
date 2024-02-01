@@ -76,6 +76,8 @@ void pchar_function(stack_t **stack, unsigned int line_number);
 void pstr_function(stack_t **stack, unsigned int line_number);
 void mul_function(stack_t **stack, unsigned int line_number);
 void mod_function(stack_t **stack, unsigned int line_number);
+void rotl_function(stack_t **stack, unsigned int line_number);
+void rotr_function(stack_t **stack, unsigned int line_number);
 void stack_function(stack_t **stack, unsigned int line_number);
 void execute_opcode(char *opcode, stack_t **stack, unsigned int line_number);
 void add_node(stack_t **head, int n);
