@@ -7,6 +7,7 @@ instruction_t instructions[] = {
 	{"queue", queue_function},
 	{"pall", pall_function},
 	{"pint", pint_function},
+	{"swap", swap_function},
 	/* Add more instructions as needed */
 	{NULL, NULL}
 };
