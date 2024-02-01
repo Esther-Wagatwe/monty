@@ -15,6 +15,7 @@ instruction_t instructions[] = {
 	{"div", div_function},
 	{"mul", mul_function},
 	{"mod", mod_function},
+	{"stack", stack_function},
 	/* Add more instructions as needed */
 	{NULL, NULL}
 };
