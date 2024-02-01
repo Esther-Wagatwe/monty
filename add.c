@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * add_function - Adds the top two elements of the stack.
+ * @stack: Double pointer to the stack.
+ * @line_number: Line number of the opcode in the Monty file.
+ * Return: void
+ */
 void add_function(stack_t **stack, unsigned int line_number)
 {
 	int sum;
