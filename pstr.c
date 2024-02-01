@@ -10,13 +10,14 @@ void pstr_function(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current = *stack;
 
+	(void)line_number;
 	if (current == NULL)
 	{
-		print("\n");
+		printf("\n");
 		return;
 	}
 	
-	while (current != NULL && current->n != 0 && current->n <= 126))
+	while (current != NULL && current->n != 0 && current->n <= 126)
 	{
 		printf("%c", (char)(current->n));
 		current = current->next;
