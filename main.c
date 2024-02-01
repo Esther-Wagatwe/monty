@@ -11,6 +11,7 @@ instruction_t instructions[] = {
 	{"pop", pop_function},
 	/* Add more instructions as needed */
 	{NULL, NULL}
+};
 
 /**
   * main - monty bytecode operator
