@@ -16,6 +16,6 @@ void pop_function(stack_t **stack, unsigned int line_number)
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 	}
 	head = *stack;
-	*stack = (*stack)->next;
+	*stack = head->next;
 	free(head);
 }
