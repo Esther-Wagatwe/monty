@@ -10,6 +10,7 @@ instruction_t instructions[] = {
 	{"swap", swap_function},
 	{"pop", pop_function},
 	{"add", add_function},
+	{"nop", nop_function},
 	/* Add more instructions as needed */
 	{NULL, NULL}
 };
